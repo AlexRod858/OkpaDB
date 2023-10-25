@@ -34,11 +34,14 @@
                     <ul class="navbar-nav me-auto">
                         <!-- /////////////////////////////// -->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Mapa</a>
+                        <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/home">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="/link">Buscar</a>
+                                <a class="nav-link active" aria-current="page" href="/mapa">Mapa</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Buscar</a>
                                 <!-- popup -->
                             </li>
                             <li class="nav-item dropdown">
@@ -46,12 +49,12 @@
                                     Localización
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">España</a></li>
-                                    <li><a class="dropdown-item" href="#">UE</a></li>
+                                    <li><a class="dropdown-item" href="/espana">España</a></li>
+                                    <li><a class="dropdown-item" href="/ue">UE</a></li>
                                     <li>
                                         <hr class="dropdown-divider">
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Otro</a></li>
+                                    <li><a class="dropdown-item" href="/otro">Otro</a></li>
                                 </ul>
                             </li>
                         </ul>
