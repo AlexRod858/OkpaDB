@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    //
+
     /////////////////////////////////////////////////////
     /////////////////////////////////////////////////////
     /////////////////////  H O M E  /////////////////////
@@ -22,76 +22,36 @@ class UserController extends Controller
         $user = Auth::user();
 
         // Obtener la información asociada al usuario
-        $nombre = $user->name;
+        $miNombre = $user->name;
 
         // Obtener las relaciones de amistad del usuario actual donde él es el emisor o receptor y el estado es 'aceptada'
-        // $amigosComoEmisor = Okupacion::where('usuario_id_emisor', $user->id)
-        //     ->where('estado', 'aceptada')
-        //     ->pluck('usuario_id_receptor');
+        $misDirecciones = Okupacion::where('id_user', $user->id);
 
-        return view('home', compact('nombre'));
+        return view('home', compact('nombre,misDirecciones'));
     }
     /////////////////////////////////////////////////////
     /////////////////////////////////////////////////////
-    /////////////////////  M A P A  /////////////////////
+    /////////////////  D A T A B A S E  /////////////////
     /////////////////////////////////////////////////////
 
-    public function mapa()
+    public function database()
     {
-        // Obtener el usuario logueado
-        $user = Auth::user();
+        $direcciones= Okupacion::all();
 
-        // Obtener la información asociada al usuario
-        $nombre = $user->name;
-
-        return view('mapa', compact('nombre'));
+        return view('database', compact("direcciones"));
     }
 
     /////////////////////////////////////////////////////
     /////////////////////////////////////////////////////
-    ///////////////////  E S P A Ñ A  ///////////////////
+    ///////////////////  Q U E  E S   ///////////////////
     /////////////////////////////////////////////////////
 
-    public function espana()
+    public function quees()
     {
-        // Obtener el usuario logueado
-        $user = Auth::user();
 
-        // Obtener la información asociada al usuario
-        $nombre = $user->name;
 
-        return view('espana', compact('nombre'));
+        return view('que-es');
     }
 
-    /////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////
-    ///////////////////  E S P A Ñ A  ///////////////////
-    /////////////////////////////////////////////////////
-
-    public function ueuropea()
-    {
-        // Obtener el usuario logueado
-        $user = Auth::user();
-
-        // Obtener la información asociada al usuario
-        $nombre = $user->name;
-
-        return view('ue', compact('nombre'));
-    }
-
-    /////////////////////////////////////////////////////
-    /////////////////////////////////////////////////////
-    /////////////////////  O T R O  /////////////////////
-    /////////////////////////////////////////////////////
-
-    public function otro()
-    {
-        // Obtener el usuario logueado
-        $user = Auth::user();
-
-        // Obtener la información asociada al usuario
-        $nombre = $user->name;
-
-        return view('otro', compact('nombre'));
-    }
+    
 }
