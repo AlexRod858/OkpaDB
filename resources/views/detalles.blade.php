@@ -4,17 +4,19 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            <a href="{{ route('database') }}" class="btn btn-primary mb-2">Volver Atrás</a>
             <div class="card">
-                <div class="card-header">OTROO</div>
+                <div class="card-header">DETALLES</div>
 
                 <div class="card-body">
-                    A SABERRRR
+                    <p>Calle: <?= $detallitos->calle ?></p>
+                    <p>Código postal: <?= $detallitos->cp ?></p>
+                    <p>Número: <?= $detallitos->numero ?></p>
+                    <p>Localidad: <?= $detallitos->localidad ?></p>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <button class="btn btn-danger">OTROOO</button>
-        </div>
+        
     </div>
 </div>
 @endsection

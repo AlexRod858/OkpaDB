@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,5 +25,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\UserController::class, 'home'])->name('home');
 Route::get('/database', [App\Http\Controllers\UserController::class, 'database'])->name('database');
 Route::get('/que-es', [App\Http\Controllers\UserController::class, 'quees'])->name('quees');
+Route::get('/database/{id}', [App\Http\Controllers\OkupacionesController::class, 'detalles'])->name('detalles');
 Route::get('/ue', [App\Http\Controllers\UserController::class, 'ueuropea'])->name('ueuropea');
-Route::get('/otro', [App\Http\Controllers\UserController::class, 'otro'])->name('otro');
