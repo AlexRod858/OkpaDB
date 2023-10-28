@@ -29,4 +29,6 @@ Route::get('/home', [App\Http\Controllers\OkupacionesController::class, 'misOkup
 Route::get('/database', [App\Http\Controllers\UserController::class, 'database'])->name('database');
 Route::get('/que-es', [App\Http\Controllers\UserController::class, 'quees'])->name('quees');
 Route::get('/database/{id}', [App\Http\Controllers\OkupacionesController::class, 'detalles'])->name('detalles');
-Route::get('/ue', [App\Http\Controllers\UserController::class, 'ueuropea'])->name('ueuropea');
+Route::get('/nueva-okupacion', [App\Http\Controllers\OkupacionesController::class, 'nuevaOku'])
+    ->name('nuevaOku')
+    ->middleware('auth');;

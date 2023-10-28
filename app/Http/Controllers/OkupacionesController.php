@@ -33,4 +33,17 @@ class OkupacionesController extends Controller
         $okupaciones = Okupacion::where('id_user',$user->id)->get();
         return view('home', compact("okupaciones"));
     }
+
+
+        /////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////
+    /////////////////////  H O M E  /////////////////////
+    /////////////////////////////////////////////////////
+
+    public function nuevaOku()
+    {
+        // Obtener el usuario logueado
+        $user = Auth::user();
+        return view('nueva');
+    }
 }

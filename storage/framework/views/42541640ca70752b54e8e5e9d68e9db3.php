@@ -2,16 +2,18 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card text-center">
+        <div class="d-grid gap-2">
+  <a href="/nueva-okupacion" class="btn btn-outline-primary" type="button">Nueva Okupación</a>
+</div>            <div class="card text-center">
                 <div class="card-header text-center">
-                    <h2>MIS PROPIEDADES OCUPADAS</h2>
+                    <h2>MIS PROPIEDADES OKUPADAS</h2>
                 </div>
 
                 <div class="card-body">
                     <div class="row">
                         <?php foreach ($okupaciones as $okupacion) : ?>
                             <div class="col-md-4 p-3">
-                                <a href="#">
+                                <a href="/database/<?php echo $okupacion->id ?>">
                                     <div class="mapa" data-latitud="<?php echo e($okupacion->latitud); ?>" data-longitud="<?php echo e($okupacion->longitud); ?>" style="width: 100%; height: 300px;"></div>
                                 </a>
                             </div>
