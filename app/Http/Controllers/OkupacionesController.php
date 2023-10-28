@@ -15,13 +15,37 @@ class OkupacionesController extends Controller
 
     public function detalles($id)
     {
-        $detallitos= Okupacion::find($id);
+        $detallitos = Okupacion::find($id);
         $calle = $detallitos->calle;
         $cp = $detallitos->cp;
         $numero = $detallitos->numero;
         $localidad = $detallitos->localidad;
 
-        return view('detalles', compact("detallitos"));
+        $latitud = $detallitos->latitud;
+        $longitud = $detallitos->longitud;
+
+        return view('detalles', compact("detallitos",'latitud', 'longitud'));
     }
 
+    /////////////////////////////////////////////////////
+    /////////////////////////////////////////////////////
+    //////////////  D I R E C C I O N E S  //////////////
+    /////////////////////////////////////////////////////
+
+    // public function direcciones()
+    // {
+    //     $config['center'] = 'Madrid, Spain';
+    //     $config['zoom'] = '16';
+    //     $config['map_height'] = '500px';
+    //     $config['geocodeCaching'] = 'true';
+
+    //     GMaps::initialize($config);
+
+    //     //Añado la ubicacion
+    //     $marker['positions'] = 'Chueca';
+
+    //     GMaps::add_marker($marker);
+
+    //     return view('detalles', compact("marker"));
+    // }
 }

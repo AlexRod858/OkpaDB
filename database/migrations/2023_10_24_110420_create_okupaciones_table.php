@@ -18,13 +18,14 @@ return new class extends Migration
             $table->string('numero');
             $table->unsignedBigInteger('id_user');
             $table->string('localidad');
-            $table->date('fecha_okupacion');
+            $table->integer('latitud');
+            $table->integer('longitud');
             $table->timestamps();
             // 
             $table->foreign('id_user')->references('id')->on('users');
         });
     }
-    
+
 
     /**
      * Reverse the migrations.

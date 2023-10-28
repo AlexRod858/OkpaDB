@@ -17,7 +17,8 @@ class Okupacion extends Model
         'cp',
         'numero',
         'localidad',
-        'fecha_okupacion',
+        'latitud',
+        'longitud',
     ];
     public function user()
     {
