@@ -38,11 +38,11 @@
                     <!-- Authentication Links -->
                     <?php if(auth()->guard()->guest()): ?>
                     <?php if(Route::has('login')): ?>
-                    <!-- <li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link dropdown" href="<?php echo e(route('login')); ?>"><?php echo e(__('Login')); ?></a>
-                    </li> -->
+                    </li>
                     <!-- ------------------------------------ -->
-                    <div class="dropdown">
+                    <!-- <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                            Login
                         </button>
@@ -53,29 +53,30 @@
                             <li><input type="text"></li>
 
                         </ul>
-                    </div>
+                    </div> -->
                     <!-- ----------------------------- -->
-                    <!-- <?php endif; ?>
+                    <?php endif; ?>
 
                     <?php if(Route::has('register')): ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo e(route('register')); ?>"><?php echo e(__('Registro')); ?></a>
                     </li>
-                    <?php endif; ?> -->
+                    <?php endif; ?>
                     <?php else: ?>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             <?php echo e(Auth::user()->name); ?>
 
                         </a>
-
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/home">
+                                Mi perfil
+                            </a>
                             <a class="dropdown-item" href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 <?php echo e(__('Cerrar sesión')); ?>
 
                             </a>
-
                             <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
                                 <?php echo csrf_field(); ?>
                             </form>

@@ -3,26 +3,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><?php echo e(__('Dashboard')); ?></div>
+                <div class="card-header text-center">
+                    <h2>MIS VIAJES</h2>
+                </div>
 
                 <div class="card-body">
-                    <?php if(session('status')): ?>
-                        <div class="alert alert-success" role="alert">
-                            <?php echo e(session('status')); ?>
-
-                        </div>
-                    <?php endif; ?>
-
-                    <?php echo e(__('You are logged in!')); ?>
-
+                    ATACAAADD!!
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <button class="btn btn-danger">CUIDADINN</button>
         </div>
     </div>
 </div>
 <?php $__env->stopSection(); ?>
-
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\laragon\www\DatabaseOkupa2023\resources\views/home.blade.php ENDPATH**/ ?>

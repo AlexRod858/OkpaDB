@@ -24,10 +24,8 @@ class UserController extends Controller
         // Obtener la información asociada al usuario
         $miNombre = $user->name;
 
-        // Obtener las relaciones de amistad del usuario actual donde él es el emisor o receptor y el estado es 'aceptada'
-        $misDirecciones = Okupacion::where('id_user', $user->id);
 
-        return view('home', compact('nombre,misDirecciones'));
+        return view('home', compact('miNombre'));
     }
     /////////////////////////////////////////////////////
     /////////////////////////////////////////////////////
@@ -36,7 +34,7 @@ class UserController extends Controller
 
     public function database()
     {
-        $direcciones= Okupacion::all();
+        $direcciones= Okupacion::paginate(5);
 
         return view('database', compact("direcciones"));
     }
