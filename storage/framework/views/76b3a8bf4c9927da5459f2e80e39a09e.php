@@ -133,10 +133,12 @@
     </section>
     <!-- Footer-->
     <footer class="py-1 bg-secondary">
-        <div class="container px-5">
-            <p class="m-0 text-center text-white">AlexRod 2023</p>
-        </div>
-    </footer>
+    <div class="container px-5">
+        <p class="m-0 text-center text-white text-tiny">
+            <a href="https://alex-rod-desarrollador.vercel.app/" class="text-white" target="_blank">Alexrod858</a>
+        </p>
+    </div>
+</footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>

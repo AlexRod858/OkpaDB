@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function database()
     {
-        $direcciones= Okupacion::paginate(5);
+        $direcciones= Okupacion::paginate(10);
 
         return view('database', compact("direcciones"));
     }

@@ -22,7 +22,10 @@ Route::get('/', function () {
 Auth::routes();
 
 ///////////////
-Route::get('/home', [App\Http\Controllers\UserController::class, 'home'])->name('home');
+Route::get('/home', [App\Http\Controllers\UserController::class, 'home'])
+    ->name('home')
+    ->middleware('auth');
+
 Route::get('/database', [App\Http\Controllers\UserController::class, 'database'])->name('database');
 Route::get('/que-es', [App\Http\Controllers\UserController::class, 'quees'])->name('quees');
 Route::get('/database/{id}', [App\Http\Controllers\OkupacionesController::class, 'detalles'])->name('detalles');
