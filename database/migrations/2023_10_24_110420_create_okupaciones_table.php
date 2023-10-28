@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('numero');
             $table->unsignedBigInteger('id_user');
             $table->string('localidad');
-            $table->integer('latitud');
-            $table->integer('longitud');
+            $table->float('latitud', 18, 15); // 18 dígitos en total, 15 decimales
+            $table->float('longitud', 18, 15);
             $table->timestamps();
             // 
             $table->foreign('id_user')->references('id')->on('users');

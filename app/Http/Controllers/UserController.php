@@ -16,17 +16,17 @@ class UserController extends Controller
     /////////////////////  H O M E  /////////////////////
     /////////////////////////////////////////////////////
 
-    public function home()
-    {
-        // Obtener el usuario logueado
-        $user = Auth::user();
+    // public function home()
+    // {
+    //     // Obtener el usuario logueado
+    //     $user = Auth::user();
 
-        // Obtener la información asociada al usuario
-        $miNombre = $user->name;
+    //     // Obtener la información asociada al usuario
+    //     $miNombre = $user->name;
 
 
-        return view('home', compact('miNombre'));
-    }
+    //     return view('home', compact('miNombre'));
+    // }
     /////////////////////////////////////////////////////
     /////////////////////////////////////////////////////
     /////////////////  D A T A B A S E  /////////////////

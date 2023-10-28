@@ -17,8 +17,8 @@ class OkupacionFactory extends Factory
             'cp' => $this->faker->postcode,
             'numero' => $this->faker->buildingNumber,
             'localidad' => $this->faker->city,
-            'latitud' => $this->faker->latitude,
-            'longitud' => $this->faker->longitude,
+            'latitud' => $this->faker->randomFloat(15, -90, 90), // Rango de -90 a 90 para latitud
+            'longitud' => $this->faker->randomFloat(15, -180, 180), // Rango de -180 a 180 para longitud            
             'id_user' => $this->faker->randomElement($userIds), // Asignar aleatoriamente un ID de usuario existente
         ];
     }

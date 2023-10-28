@@ -19,7 +19,7 @@
                                 <h4><strong>Localidad: </strong><?= $detallitos->localidad ?></h4>
                             </div>
                             <div class="col-md-6">
-                                <div id="mapa" data-latitud="{{ $latitud }}" data-longitud="{{ $longitud }}" style="width: 100%; height:500px;">
+                                <div id="mapa" data-latitud="{{ $detallitos->latitud }}" data-longitud="{{ $detallitos->longitud }}" style="width: 100%; height:500px;">
 
                                 </div>
                             </div>

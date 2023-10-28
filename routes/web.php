@@ -22,8 +22,8 @@ Route::get('/', function () {
 Auth::routes();
 
 ///////////////
-Route::get('/home', [App\Http\Controllers\UserController::class, 'home'])
-    ->name('home')
+Route::get('/home', [App\Http\Controllers\OkupacionesController::class, 'misOkupaciones'])
+    ->name('misOkupaciones')
     ->middleware('auth');
 
 Route::get('/database', [App\Http\Controllers\UserController::class, 'database'])->name('database');

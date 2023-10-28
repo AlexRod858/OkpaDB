@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Okupacion;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class OkupacionesController extends Controller
 {
@@ -16,36 +17,20 @@ class OkupacionesController extends Controller
     public function detalles($id)
     {
         $detallitos = Okupacion::find($id);
-        $calle = $detallitos->calle;
-        $cp = $detallitos->cp;
-        $numero = $detallitos->numero;
-        $localidad = $detallitos->localidad;
 
-        $latitud = $detallitos->latitud;
-        $longitud = $detallitos->longitud;
-
-        return view('detalles', compact("detallitos",'latitud', 'longitud'));
+        return view('detalles', compact("detallitos"));
     }
 
     /////////////////////////////////////////////////////
     /////////////////////////////////////////////////////
-    //////////////  D I R E C C I O N E S  //////////////
+    /////////////////////  H O M E  /////////////////////
     /////////////////////////////////////////////////////
 
-    // public function direcciones()
-    // {
-    //     $config['center'] = 'Madrid, Spain';
-    //     $config['zoom'] = '16';
-    //     $config['map_height'] = '500px';
-    //     $config['geocodeCaching'] = 'true';
-
-    //     GMaps::initialize($config);
-
-    //     //Añado la ubicacion
-    //     $marker['positions'] = 'Chueca';
-
-    //     GMaps::add_marker($marker);
-
-    //     return view('detalles', compact("marker"));
-    // }
+    public function misOkupaciones()
+    {
+        // Obtener el usuario logueado
+        $user = Auth::user();
+        $okupaciones = Okupacion::where('id_user',$user->id)->get();
+        return view('home', compact("okupaciones"));
+    }
 }
