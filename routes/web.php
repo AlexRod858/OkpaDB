@@ -27,8 +27,8 @@ Route::get('/database', [App\Http\Controllers\UserController::class, 'database']
 Route::get('/que-es', [App\Http\Controllers\UserController::class, 'quees'])->name('quees');
 Route::get('/database/{id}', [App\Http\Controllers\OkupacionesController::class, 'detalles'])->name('detalles');
 Route::get('/nueva-okupacion', [App\Http\Controllers\OkupacionesController::class, 'nuevaOku'])->name('nuevaOku')->middleware('auth');
-Route::post('/guardar-direccion', [App\Http\Controllers\OkupacionesController::class, 'recibeForm'])->name('guardar-direccion');
-Route::get('/database/{id}/borrar', [App\Http\Controllers\OkupacionesController::class, 'borrarElemento'])->name('borrar-elemento');
-Route::put('/actualizar-direccion/{id}', [App\Http\Controllers\OkupacionesController::class, 'actualizaRegistro'])->name('actualizar-direccion');
+Route::post('/guardar-direccion', [App\Http\Controllers\OkupacionesController::class, 'recibeForm'])->name('guardar-direccion')->middleware('auth');
+Route::get('/database/{id}/borrar', [App\Http\Controllers\OkupacionesController::class, 'borrarElemento'])->name('borrar-elemento')->middleware('auth');
+Route::put('/actualizar-direccion/{id}', [App\Http\Controllers\OkupacionesController::class, 'actualizaRegistro'])->name('actualizar-direccion')->middleware('auth');
 
 });

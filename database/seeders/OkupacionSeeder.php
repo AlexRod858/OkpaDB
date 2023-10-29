@@ -13,6 +13,6 @@ class OkupacionSeeder extends Seeder
      */
     public function run(): void
     {
-        Okupacion::factory()->count(20)->create();
+        Okupacion::factory()->count(50)->create();
     }
 }

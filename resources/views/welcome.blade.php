@@ -132,10 +132,10 @@
         </div>
     </section>
     <!-- Footer-->
-    <footer class="py-1 bg-secondary">
+    <footer class="py-1 ">
     <div class="container px-5">
         <p class="m-0 text-center text-white text-tiny">
-            <a href="https://alex-rod-desarrollador.vercel.app/" class="text-white" target="_blank">Alexrod858</a>
+            <a href="https://alex-rod-desarrollador.vercel.app/" class="text-secondary" target="_blank">Developed by Alexrod858</a>
         </p>
     </div>
 </footer>
